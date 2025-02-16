@@ -17,6 +17,12 @@
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
       border: 1px solid #ddd;
     }
+   .dashboard-marker {
+      width: 10px; /* 마커 이미지 크기 조정 */
+      height: 13px;
+      margin-right: 3px; /* 텍스트와의 간격 */
+      vertical-align: middle; /* 텍스트와 세로 정렬 */
+   }
   </style>
 
 </head>
@@ -106,10 +112,11 @@ dashboard.innerHTML = `
   총 주소 수: <span id="totalCount">0</span><br>
   마커 성공: <span id="successCount">0</span><br>
   마커 실패: <span id="failCount">0</span><br><br>
-  완료: <span id="status완료">0</span><br>
-  양호: <span id="status양호">0</span><br>
-  불량: <span id="status불량">0</span><br>
-  미점검: <span id="status미점검">0</span><br>
+ <img src="images/marker_green.png" class="dashboard-marker">완료: <span id="status완료">0</span><br>
+ <img src="images/marker_blue.png" class="dashboard-marker">양호: <span id="status양호">0</span><br>
+ <img src="images/marker_fail.png" class="dashboard-marker">불량: <span id="status불량">0</span><br>
+ <img src="images/marker_black.png" class="dashboard-marker">미점검: <span id="status미점검">0</span><br>
+
 `;
 mapContainer.appendChild(dashboard);
 
@@ -288,9 +295,9 @@ function createMarker(lat, lng, 주소, 호출명칭, 상태) {
     </div>
   `;
 
-  let markerImageSrc = 'images/marker_green.png'; // 기본 마커 (미점검 - Gray) - Place marker.png in 'images' directory
+  let markerImageSrc = 'images/marker_black.png'; // 기본 마커 (미점검 - Gray) - Place marker.png in 'images' directory
   if (상태 === '수검완료') {
-    markerImageSrc = 'images/marker_end.png'; // 완료 - Green - Place nmarker_green.png in 'images' directory
+    markerImageSrc = 'images/marker_green.png'; // 완료 - Green - Place nmarker_green.png in 'images' directory
   } else if (상태 === '양호') {
     markerImageSrc = 'images/marker_blue.png'; // 양호 - Blue - Place nmarker_blue.png in 'images' directory
   } else if (상태 === '불량') {
