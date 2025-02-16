@@ -288,15 +288,15 @@ function createMarker(lat, lng, 주소, 호출명칭, 상태) {
     </div>
   `;
 
-  let markerImageSrc = 'https://t1.daumcdn.net/mapjsapi/images/2x/marker.png'; // 기본 마커 (미점검 - Gray)
+  let markerImageSrc = 'images/marker_green.png'; // 기본 마커 (미점검 - Gray) - Place marker.png in 'images' directory
   if (상태 === '수검완료') {
-    markerImageSrc = 'https://i1.daumcdn.net/dmaps/apis/nmarker_green.png'; // 완료 - Green
+    markerImageSrc = 'images/marker_end.png'; // 완료 - Green - Place nmarker_green.png in 'images' directory
   } else if (상태 === '양호') {
-    markerImageSrc = 'https://i1.daumcdn.net/dmaps/apis/nmarker_blue.png'; // 양호 - Blue
+    markerImageSrc = 'images/marker_blue.png'; // 양호 - Blue - Place nmarker_blue.png in 'images' directory
   } else if (상태 === '불량') {
-    markerImageSrc = 'https://i1.daumcdn.net/dmaps/apis/nmarker_red.png'; // 불량 - Red
+    markerImageSrc = 'images/marker_fail.png'; // 불량 - Red - Place nmarker_red.png in 'images' directory
   } else {
-    markerImageSrc = 'https://t1.daumcdn.net/mapjsapi/images/2x/marker.png'; // 미점검 또는 기타 - Gray (default)
+    markerImageSrc = 'images/marker_black.png'; // 미점검 또는 기타 - Gray (default)
   }
 
   // 마커 이미지 옵션 (크기 조절)
