@@ -111,7 +111,7 @@ const saved담당자 = localStorage.getItem('selected담당자') || '전체'; //
 async function initMap() {
   const mapOption = {
     center: new kakao.maps.LatLng(35.8786107550773, 128.63360050154185), // KT효목사옥
-    level: 3,
+    level: 10,
   };
   map = new kakao.maps.Map(mapContainer, mapOption);
   geocoder = new kakao.maps.services.Geocoder();
